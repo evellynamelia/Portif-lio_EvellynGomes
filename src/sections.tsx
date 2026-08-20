@@ -62,16 +62,16 @@ export function Hero() {
           <div className="hero__social">
             <span className="font-mono text-secondary hero__social-label">REDES SOCIAIS</span>
             <div className="hero__social-icons">
-              <a className="icon-circle" href="#" aria-label="Instagram">
+              <a className="icon-circle" href="https://www.instagram.com/evyngomes/" aria-label="Instagram">
                 <Instagram size={16} />
               </a>
-              <a className="icon-circle font-mono hero__behance" href="#" aria-label="Behance">
+              <a className="icon-circle font-mono hero__behance" href="https://www.behance.net/evellynamélia" aria-label="Behance">
                 Be
               </a>
-              <a className="icon-circle" href="#" aria-label="LinkedIn">
+              <a className="icon-circle" href="https://br.linkedin.com/in/evellynamélia" aria-label="LinkedIn">
                 <Linkedin size={16} />
               </a>
-              <a className="icon-circle" href="#contato" aria-label="E-mail">
+              <a className="icon-circle" href="mailto:evellynamelia2005@gmail.com" aria-label="E-mail">
                 <Mail size={16} />
               </a>
             </div>

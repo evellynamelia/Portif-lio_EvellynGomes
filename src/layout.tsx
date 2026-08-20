@@ -93,16 +93,16 @@ export function Footer() {
         </nav>
 
         <div className="footer__social">
-          <a className="icon-circle icon-circle-sm" href="#" aria-label="Instagram">
+          <a className="icon-circle icon-circle-sm" href="https://www.instagram.com/evyngomes/" aria-label="Instagram">
             <Instagram size={15} />
           </a>
-          <a className="icon-circle icon-circle-sm font-mono footer__behance" href="#" aria-label="Behance">
+          <a className="icon-circle icon-circle-sm font-mono footer__behance" href="https://www.behance.net/evellynamélia" aria-label="Behance">
             Be
           </a>
-          <a className="icon-circle icon-circle-sm" href="#" aria-label="LinkedIn">
+          <a className="icon-circle icon-circle-sm" href="https://br.linkedin.com/in/evellynamélia" aria-label="LinkedIn">
             <Linkedin size={15} />
           </a>
-          <a className="icon-circle icon-circle-sm" href="mailto:contato@evellyngomes.com" aria-label="E-mail">
+          <a className="icon-circle icon-circle-sm" href="mailto:evellynamelia2005@gmail.com" aria-label="E-mail">
             <Mail size={15} />
           </a>
         </div>

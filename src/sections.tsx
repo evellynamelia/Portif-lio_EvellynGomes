@@ -55,7 +55,7 @@ export function Hero() {
             <Button variant="primary" href="#projetos">
               Ver projetos
             </Button>
-            <Button variant="outline" href="https://api.whatsapp.com/send/?phone=5581997208697&text&type=phone_number&app_absent=0">
+            <Button variant="outline" href="https://wa.me/5581997208697">
               Vamos conversar
             </Button>
           </div>
@@ -284,7 +284,7 @@ export function Experiences() {
           </div>
         </Reveal>
         <Reveal delay={100}>
-          <Button variant="outline" size="sm" href="https://api.whatsapp.com/send/?phone=5581997208697&text&type=phone_number&app_absent=0">
+          <Button variant="outline" size="sm" href="https://wa.me/5581997208697">
             Ver minha jornada
           </Button>
         </Reveal>

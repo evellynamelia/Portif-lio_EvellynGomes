@@ -37,7 +37,7 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
 
         <div className="navbar__actions">
           <ThemeToggle theme={theme} onToggle={onToggleTheme} />
-          <a href="#contato" className="btn btn-outline btn-sm navbar__links--desktop">
+          <a href="https://wa.me/5581997208697" className="btn btn-outline btn-sm navbar__links--desktop">
             Contato
           </a>
           <button

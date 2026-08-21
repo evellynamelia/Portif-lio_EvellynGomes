@@ -39,7 +39,7 @@ export function Hero() {
       <div className="hero__glow" aria-hidden="true" />
       <div className="container hero__grid">
         <Reveal>
-          <span className="chip font-mono">Olá, eu sou a Evellyn 👋</span>
+          <span className="chip font-mono">Olá, eu sou a Evellyn</span>
           <h1 className="hero__title">
             EU TRANSFORMO
             <br />
@@ -56,7 +56,7 @@ export function Hero() {
               Ver projetos
             </Button>
             <Button variant="outline" href="https://wa.me/5581997208697">
-              Vamos conversar
+              Me chama no WhatsApp
             </Button>
           </div>
           <div className="hero__social">

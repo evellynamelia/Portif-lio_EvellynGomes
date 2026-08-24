@@ -43,9 +43,6 @@ export function DevNoticeModal({ onDismiss }: DevNoticeModalProps) {
           <Button variant="onlight" size="sm" icon={ArrowRight} onClick={close}>
             Entendi, continuar
           </Button>
-          <button className="dn-btn-ghost" onClick={close}>
-            Fechar
-          </button>
         </div>
 
         <hr className="dn-divider" />

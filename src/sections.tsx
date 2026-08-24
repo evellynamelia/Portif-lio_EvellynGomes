@@ -8,8 +8,10 @@ import {
   ArrowUpRight,
   Compass,
 } from "lucide-react";
+import evellynPhoto from "./assets/evellyn.jpeg";
 import { services, projects, processSteps, type Project, type Service, type ProcessStepData } from "./data";
 import { Button, EGMark, Reveal } from "./ui";
+
 
 /* ============================================================ */
 /*  HERO                                                         */
@@ -302,9 +304,12 @@ export function About() {
     <section id="sobre" className="container section">
       <div className="about__grid">
         <Reveal>
-          <div className="about__photo" role="img" aria-label="Foto de Evellyn Gomes — placeholder">
-            <span className="font-mono about__photo-label">Foto — placeholder</span>
-          </div>
+          <div className="about__photo">
+              <img
+                  src={evellynPhoto}
+                  alt="Evellyn Gomes"
+                />
+                </div>
         </Reveal>
 
         <Reveal delay={100}>

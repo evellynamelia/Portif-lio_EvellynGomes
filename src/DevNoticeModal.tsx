@@ -48,7 +48,7 @@ export function DevNoticeModal({ onDismiss }: DevNoticeModalProps) {
         <hr className="dn-divider" />
         <div className="dn-footer">
           <Construction size={13} />
-          Encontrou um bug? Me conta em <b>contato@evellyngomes.com</b>
+          Encontrou um bug? Me conta em <b>evellynamelia2005@gmail.com</b>
         </div>
       </div>
     </div>

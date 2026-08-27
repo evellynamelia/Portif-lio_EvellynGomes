@@ -21,7 +21,7 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
       <div className="container navbar__row">
         <a href="/" className="navbar__brand">
           <img
-            src="/public/favicon.svg"
+            src="/favicon.svg"
             alt="Evellyn Gomes"
             className="navbar__logo"
           />

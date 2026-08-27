@@ -41,7 +41,6 @@ export function Hero() {
       <div className="hero__glow" aria-hidden="true" />
       <div className="container hero__grid">
         <Reveal>
-          <span className="chip font-mono">Olá, eu sou a Evellyn</span>
           <h1 className="hero__title">
             EU TRANSFORMO
             <br />
@@ -62,7 +61,7 @@ export function Hero() {
             </Button>
           </div>
           <div className="hero__social">
-            <span className="font-mono text-secondary hero__social-label">REDES SOCIAIS</span>
+            <span className="font-poppins text-secondary hero__social-label">REDES SOCIAIS</span>
             <div className="hero__social-icons">
               <a className="icon-circle" href="https://www.instagram.com/evyngomes/" aria-label="Instagram">
                 <Instagram size={16} />
@@ -199,7 +198,7 @@ export function Projects() {
               <span>Projetos selecionados</span>
               <Sparkles size={13} />
             </div>
-            <a href="#" className="nav-link font-mono projects__all-link">
+            <a href="#" className="nav-link font-poppins projects__all-link">
               Ver todos os projetos <ArrowRight size={13} />
             </a>
           </div>
@@ -265,12 +264,6 @@ export function Process() {
     </section>
   );
 }
-
-/* ============================================================ */
-/*  EXPERIENCES                                                   */
-/*  Chamada compacta apontando para uma futura página dedicada,   */
-/*  onde hackathons, palestras, certificações etc. vão morar.     */
-/* ============================================================ */
 
 export function Experiences() {
   return (

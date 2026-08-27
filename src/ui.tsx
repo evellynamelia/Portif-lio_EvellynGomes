@@ -5,10 +5,6 @@ import type { LucideIcon } from "lucide-react";
 import { useReveal } from "./hooks";
 import type { Theme } from "./hooks";
 
-/* ==================== Button ====================
-   Botão reutilizável que renderiza como <a> quando recebe `href`,
-   ou como <button> caso contrário. */
-
 type Variant = "primary" | "outline" | "onlight";
 type Size = "md" | "sm";
 
@@ -54,10 +50,6 @@ export function Button({
   );
 }
 
-/* ==================== EGMark ====================
-   O monograma "EG" — assinatura visual do site. Um arco lavanda ("E") se
-   entrelaça com um disco em gradiente roxo com um recorte ("G"). Reusado
-   em várias escalas: navbar, hero, footer e fundos decorativos. */
 
 interface EGMarkProps {
   size?: number;
@@ -104,10 +96,6 @@ export function EGMark({ size = 40, animated = false, className = "" }: EGMarkPr
   );
 }
 
-/* ==================== Reveal ====================
-   Envolve o conteúdo e aplica a transição de fade + subida quando ele
-   entra na viewport (ver hook useReveal). */
-
 interface RevealProps {
   children: ReactNode;
   as?: ElementType;
@@ -128,9 +116,6 @@ export function Reveal({ children, as: Tag = "div", delay = 0, className = "" }:
     </Tag>
   );
 }
-
-/* ==================== ThemeToggle ====================
-   Alternância claro/escuro exibida na navbar. */
 
 interface ThemeToggleProps {
   theme: Theme;

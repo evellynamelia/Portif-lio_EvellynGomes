@@ -90,21 +90,14 @@ export interface Project {
   url?: string;
 }
 
-/**
- * Placeholder gradients no lugar de imagens reais.
- * Basta preencher `image` com o asset final (ex: "/projects/tocando-a-vida.jpg")
- * que o gradiente deixa de ser usado automaticamente.
- */
 export const projects: Project[] = [
   {
     name: "Tocando a Vida",
     tag: "Campanha completa",
     category: "Marketing · Social Media · Design · Audiovisual",
-    description:
-      "Campanha completa de marketing e conteúdo para fortalecer a presença digital da marca.",
+    description:"Campanha completa de marketing e conteúdo para fortalecer a presença digital da marca.",
     gradientFrom: "#F7B733",
     gradientTo: "#B06AB3",
-    featured: true,
   },
   {
     name: "EGKR Logística",
@@ -126,8 +119,7 @@ export const projects: Project[] = [
     name: "Projeto Front-end",
     tag: "Web · Front-end",
     category: "Web Design · Front-end · Desenvolvimento",
-    description:
-      "Landing page desenvolvida com foco em performance, responsividade e boas práticas de código.",
+    description: "Landing page desenvolvida com foco em performance, responsividade e boas práticas de código.",
     gradientFrom: "#8E54E9",
     gradientTo: "#4776E6",
   },

@@ -2,9 +2,6 @@ import { useState } from "react";
 import { X, ArrowRight, Construction } from "lucide-react";
 import { Button } from "./ui";
 
-/* ==================== DevNoticeModal ====================
-   Aviso de "site em construção". Renderiza um overlay fixo assim que a
-   página carrega e some quando a pessoa fecha (X, "Fechar" ou "Entendi"). */
 
 interface DevNoticeModalProps {
   onDismiss?: () => void;

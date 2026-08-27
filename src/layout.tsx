@@ -19,8 +19,13 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
   return (
     <header className={`navbar surface ${scrolled ? "navbar--scrolled" : ""}`}>
       <div className="container navbar__row">
-        <a href="#inicio" className="navbar__brand">
-          <EGMark size={34} />
+        <a href="/" className="navbar__brand">
+          <img
+            src="/public/favicon.svg"
+            alt="Evellyn Gomes"
+            className="navbar__logo"
+          />
+
           <span className="navbar__brand-text">
             <span>EVELLYN</span>
             <span>GOMES</span>
@@ -78,9 +83,9 @@ export function Footer() {
           <EGMark size={30} />
           <div>
             <div className="footer__name">EVELLYN GOMES</div>
-            <div className="font-mono text-secondary footer__tagline">DESIGN • CODE • DIGITAL</div>
+            <div className="font-poppins text-secondary footer__tagline">DESIGN • CODE • DIGITAL</div>
           </div>
-        </div>
+        </div>  
 
         <nav className="footer__links" aria-label="Links do rodapé">
           {navLinks
@@ -96,7 +101,7 @@ export function Footer() {
           <a className="icon-circle icon-circle-sm" href="https://www.instagram.com/evyngomes/" aria-label="Instagram">
             <Instagram size={15} />
           </a>
-          <a className="icon-circle icon-circle-sm font-mono footer__behance" href="https://www.behance.net/evellynamélia" aria-label="Behance">
+          <a className="icon-circle icon-circle-sm font-poppins footer__behance" href="https://www.behance.net/evellynamélia" aria-label="Behance">
             Be
           </a>
           <a className="icon-circle icon-circle-sm" href="https://br.linkedin.com/in/evellynamélia" aria-label="LinkedIn">

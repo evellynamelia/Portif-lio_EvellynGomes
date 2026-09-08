@@ -1,8 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { PenTool, Code2, Megaphone, Video, Lightbulb, Search, Layers, Rocket } from "lucide-react";
 
-/* -------------------- navegação -------------------- */
-
 export interface NavLink {
   label: string;
   href: string;
@@ -17,7 +15,6 @@ export const navLinks: NavLink[] = [
   { label: "Contato", href: "#contato" },
 ];
 
-/* -------------------- serviços -------------------- */
 
 export interface Service {
   number: string;
@@ -59,7 +56,6 @@ export const services: Service[] = [
   },
 ];
 
-/* -------------------- processo -------------------- */
 
 export interface ProcessStepData {
   number: string;
@@ -76,7 +72,8 @@ export const processSteps: ProcessStepData[] = [
   { number: "05", title: "Resultado", icon: Rocket, description: "Entrego experiências digitais completas." },
 ];
 
-/* -------------------- projetos -------------------- */
+
+export type ProjectPlatform = "github" | "linkedin" | "instagram" | "behance" | "external";
 
 export interface Project {
   name: string;
@@ -88,6 +85,7 @@ export interface Project {
   gradientTo: string;
   featured?: boolean;
   url?: string;
+  platform?: ProjectPlatform;
 }
 
 export const projects: Project[] = [
@@ -98,6 +96,7 @@ export const projects: Project[] = [
     description:"Campanha completa de marketing e conteúdo para fortalecer a presença digital da marca.",
     gradientFrom: "#F7B733",
     gradientTo: "#B06AB3",
+    platform: "instagram",
   },
   {
     name: "EGKR Logística",
@@ -106,6 +105,7 @@ export const projects: Project[] = [
     description: "Identidade visual completa aplicada a materiais gráficos e comunicação da marca.",
     gradientFrom: "#3E4C6B",
     gradientTo: "#1B1F2E",
+    platform: "behance",
   },
   {
     name: "Do Zero ao MEI",
@@ -114,6 +114,7 @@ export const projects: Project[] = [
     description: "Plataforma digital com prototipação de interface e desenvolvimento front-end.",
     gradientFrom: "#6A5ACD",
     gradientTo: "#2C2A4A",
+    platform: "github",
   },
   {
     name: "Projeto Front-end",
@@ -122,5 +123,6 @@ export const projects: Project[] = [
     description: "Landing page desenvolvida com foco em performance, responsividade e boas práticas de código.",
     gradientFrom: "#8E54E9",
     gradientTo: "#4776E6",
+    platform: "github",
   },
 ];

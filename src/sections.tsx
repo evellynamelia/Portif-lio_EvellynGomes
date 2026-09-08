@@ -2,20 +2,18 @@ import { useId } from "react";
 import {
   Instagram,
   Linkedin,
+  Github,
+  ExternalLink,
   Mail,
   Sparkles,
   ArrowRight,
   ArrowUpRight,
   Compass,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import evellynPhoto from "./assets/evellyn.jpeg";
 import { services, projects, processSteps, type Project, type Service, type ProcessStepData } from "./data";
 import { Button, EGMark, Reveal } from "./ui";
-
-
-/* ============================================================ */
-/*  HERO                                                         */
-/* ============================================================ */
 
 function OrbitLabel() {
   const uid = useId().replace(/:/g, "");
@@ -96,10 +94,6 @@ export function Hero() {
   );
 }
 
-/* ============================================================ */
-/*  SERVICES                                                     */
-/* ============================================================ */
-
 function ServiceCard({ service }: { service: Service }) {
   const Icon = service.icon;
 
@@ -153,16 +147,20 @@ export function Services() {
   );
 }
 
-/* ============================================================ */
-/*  PROJECTS                                                     */
-/* ============================================================ */
+const platformIcons: Partial<Record<Exclude<Project["platform"], undefined>, LucideIcon>> = {
+  github: Github,
+  linkedin: Linkedin,
+  instagram: Instagram,
+  external: ExternalLink,
+};
 
 function ProjectCard({ project }: { project: Project }) {
+  const isBehance = project.platform === "behance";
+  const PlatformIcon = !isBehance && project.platform ? platformIcons[project.platform] : undefined;
+  const ViewIcon = PlatformIcon ?? ArrowUpRight;
+
   return (
-    <a
-      href={project.url ?? "#"}
-      className={`card project-card ${project.featured ? "project-card--featured" : ""}`}
-    >
+    <a href={project.url ?? "#"} className={`card project-card ${project.featured ? "project-card--featured" : ""}`}>
       <div className="project-card__thumb">
         {project.image ? (
           <img src={project.image} alt={project.name} className="project-card__thumb-fill" />
@@ -175,7 +173,11 @@ function ProjectCard({ project }: { project: Project }) {
         )}
         <span className="project-card__tag font-mono">{project.tag}</span>
         <span className="project-card__view">
-          <ArrowUpRight size={16} />
+          {isBehance ? (
+            <span className="font-mono project-card__view-behance">Be</span>
+          ) : (
+            <ViewIcon size={16} />
+          )}
         </span>
       </div>
 
@@ -219,10 +221,6 @@ export function Projects() {
     </section>
   );
 }
-
-/* ============================================================ */
-/*  PROCESS                                                       */
-/* ============================================================ */
 
 function ProcessStep({ step }: { step: ProcessStepData }) {
   const Icon = step.icon;
@@ -288,9 +286,6 @@ export function Experiences() {
   );
 }
 
-/* ============================================================ */
-/*  ABOUT                                                          */
-/* ============================================================ */
 
 export function About() {
   return (
@@ -327,7 +322,7 @@ export function About() {
         <Reveal delay={200}>
           <div className="about__contact">
             <div className="anim-float about__contact-mark" aria-hidden="true">
-              <EGMark size={140} />
+              <EGMark size={300} />
             </div>
             <h3 className="about__contact-title">VAMOS CRIAR ALGO INCRÍVEL JUNTOS?</h3>
             <p className="about__contact-text">

@@ -1,7 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
-/* -------------------- tema (claro/escuro) -------------------- */
-
 export type Theme = "dark" | "light";
 
 const THEME_STORAGE_KEY = "eg-portfolio-theme";
@@ -28,7 +26,6 @@ export function useTheme() {
   return { theme, toggleTheme };
 }
 
-/* -------------------- scroll reveal -------------------- */
 export function useReveal<T extends HTMLElement = HTMLDivElement>(threshold = 0.15) {
   const ref = useRef<T | null>(null);
   const [visible, setVisible] = useState(false);
@@ -54,9 +51,6 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>(threshold = 0.
   return { ref, visible };
 }
 
-/* -------------------- scroll listener genérico -------------------- */
-
-/** Retorna `true` assim que window.scrollY ultrapassa `offset`. */
 export function useScrolledPast(offset: number) {
   const [past, setPast] = useState(false);
 

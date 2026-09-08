@@ -5,8 +5,6 @@ import { useScrolledPast } from "./hooks";
 import type { Theme } from "./hooks";
 import { EGMark, ThemeToggle } from "./ui";
 
-/* ==================== Navbar ==================== */
-
 interface NavbarProps {
   theme: Theme;
   onToggleTheme: () => void;
@@ -73,8 +71,6 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
   );
 }
 
-/* ==================== Footer ==================== */
-
 export function Footer() {
   return (
     <footer id="contato" className="surface footer">
@@ -120,7 +116,6 @@ export function Footer() {
   );
 }
 
-/* ==================== ScrollTop ==================== */
 
 export function ScrollTop() {
   const show = useScrolledPast(500);

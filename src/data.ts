@@ -84,7 +84,7 @@ export interface Project {
   gradientFrom: string;
   gradientTo: string;
   featured?: boolean;
-  url?: string;
+  url: string;
   platform?: ProjectPlatform;
 }
 
@@ -97,6 +97,7 @@ export const projects: Project[] = [
     gradientFrom: "#F7B733",
     gradientTo: "#B06AB3",
     platform: "instagram",
+    url: "https://www.instagram.com/evyngomes/",
   },
   {
     name: "EGKR Logística",
@@ -106,6 +107,7 @@ export const projects: Project[] = [
     gradientFrom: "#3E4C6B",
     gradientTo: "#1B1F2E",
     platform: "behance",
+    url: "https://www.behance.net/evellynamélia",
   },
   {
     name: "Do Zero ao MEI",
@@ -115,6 +117,7 @@ export const projects: Project[] = [
     gradientFrom: "#6A5ACD",
     gradientTo: "#2C2A4A",
     platform: "github",
+    url: "https://github.com/evellynamelia/Portif-lio_EvellynGomes",
   },
   {
     name: "Projeto Front-end",
@@ -124,5 +127,6 @@ export const projects: Project[] = [
     gradientFrom: "#8E54E9",
     gradientTo: "#4776E6",
     platform: "github",
+    url: "https://github.com/evellynamelia/Portif-lio_EvellynGomes",
   },
 ];

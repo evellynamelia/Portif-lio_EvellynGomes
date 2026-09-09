@@ -15,6 +15,7 @@
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+  --font-poppins: "Poppins", sans-serif;
 
   --radius-sm: 10px;
   --radius-md: 18px;
@@ -35,9 +36,7 @@
   --shadow: 0 20px 50px rgba(101, 65, 232, 0.12);
 }
 
-/* ================================================================
-   2. RESET & BASE
-   ================================================================ */
+
 
 * {
   box-sizing: border-box;
@@ -88,9 +87,7 @@ img {
   border-radius: 6px;
 }
 
-/* ================================================================
-   3. UTILITÁRIOS GERAIS (layout, texto, animação)
-   ================================================================ */
+
 
 .container {
   max-width: var(--container);
@@ -108,7 +105,7 @@ img {
   transition: border-color 0.4s ease;
 }
 
-.surface {
+.page-surface {
   background: var(--surface);
   transition: background-color 0.4s ease, border-color 0.4s ease;
 }
@@ -169,7 +166,7 @@ img {
   opacity: 0.35;
 }
 
-/* ---- botões ---- */
+
 
 .btn {
   display: inline-flex;
@@ -235,7 +232,7 @@ img {
   font-weight: 700;
 }
 
-/* ---- círculos de ícone / links de navegação ---- */
+
 
 .icon-circle {
   width: 40px;
@@ -291,7 +288,7 @@ img {
   width: 100%;
 }
 
-/* ---- scroll reveal ---- */
+
 
 .reveal {
   opacity: 0;
@@ -304,7 +301,7 @@ img {
   transform: translateY(0);
 }
 
-/* ---- animações ambiente ---- */
+
 
 @keyframes float {
   0%,
@@ -378,11 +375,9 @@ img {
   }
 }
 
-/* ================================================================
-   4. LAYOUT — navbar, footer, botão voltar ao topo
-   ================================================================ */
 
-.navbar__brand {
+
+.site-header__brand {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -390,21 +385,21 @@ img {
   flex-shrink: 0;
 }
 
-.navbar__logo {
+.site-header__logo {
   width: 32px;
   height: 32px;
   object-fit: contain;
   display: block;
 }
 
-.navbar__brand-text {
+.site-header__brand-name {
   display: flex;
   flex-direction: column;
   justify-content: center;
   line-height: 1;
 }
 
-.navbar__brand-text span {
+.site-header__brand-name span {
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -412,7 +407,7 @@ img {
 }
 
 
-.navbar {
+.site-header {
   position: sticky;
   top: 0;
   z-index: 40;
@@ -422,12 +417,12 @@ img {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.navbar--scrolled {
+.site-header--scrolled {
   background-color: var(--surface);
   border-bottom-color: var(--border);
 }
 
-.navbar__row {
+.site-header__content {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -436,7 +431,7 @@ img {
   padding-bottom: 14px;
 }
 
-.navbar__brand {
+.site-header__brand {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -444,7 +439,7 @@ img {
   color: var(--text-primary);
 }
 
-.navbar__brand-text {
+.site-header__brand-name {
   display: flex;
   flex-direction: column;
   line-height: 1.05;
@@ -454,18 +449,18 @@ img {
   letter-spacing: 0.01em;
 }
 
-.navbar__links {
+.site-header__navigation {
   display: flex;
   gap: 28px;
 }
 
-.navbar__actions {
+.site-header__actions {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.navbar__burger {
+.site-header__menu-button {
   display: none;
   background: transparent;
   border: 1px solid var(--border);
@@ -478,19 +473,19 @@ img {
   cursor: pointer;
 }
 
-.navbar__mobile {
+.site-header__mobile-menu {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease;
   border-top: 1px solid transparent;
 }
 
-.navbar__mobile.is-open {
+.site-header__mobile-menu.is-open {
   max-height: 420px;
   border-top-color: var(--border);
 }
 
-.navbar__mobile-inner {
+.site-header__mobile-menu-content {
   padding: 16px 24px 22px;
   display: flex;
   flex-direction: column;
@@ -499,19 +494,19 @@ img {
 }
 
 @media (max-width: 860px) {
-  .navbar__links--desktop {
+  .site-header__navigation--desktop {
     display: none !important;
   }
-  .navbar__burger {
+  .site-header__menu-button {
     display: flex;
   }
 }
 
-.footer {
+.site-footer {
   border-top: 1px solid var(--border);
 }
 
-.footer__row {
+.site-footer__content {
   padding: 40px 24px 28px;
   display: flex;
   flex-wrap: wrap;
@@ -520,51 +515,51 @@ img {
   justify-content: space-between;
 }
 
-.footer__brand {
+.site-footer__brand {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.footer__name {
+.site-footer__name {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 14px;
 }
 
-.footer__tagline {
+.site-footer__tagline {
   font-size: 10.5px;
   margin-top: 2px;
 }
 
-.footer__links {
+.site-footer__navigation {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.footer__links .nav-link {
+.site-footer__navigation .nav-link {
   font-size: 13px;
 }
 
-.footer__social {
+.site-footer__social-links {
   display: flex;
   gap: 10px;
 }
 
-.footer__behance {
+.site-footer__behance-link {
   font-size: 10.5px;
   font-weight: 700;
 }
 
-.footer__bottom {
+.site-footer__copyright {
   border-top: 1px solid var(--border);
   padding: 16px 24px;
   text-align: center;
   font-size: 12.5px;
 }
 
-.scroll-top {
+.back-to-top {
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -586,7 +581,7 @@ img {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.scroll-top.is-visible {
+.back-to-top.is-visible {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
@@ -621,9 +616,7 @@ img {
   color: #fff;
 }
 
-/* ================================================================
-   5. HERO
-   ================================================================ */
+
 
 .hero {
   position: relative;
@@ -730,9 +723,7 @@ img {
   }
 }
 
-/* ================================================================
-   6. SERVICES
-   ================================================================ */
+
 
 .services__grid {
   display: grid;
@@ -836,9 +827,7 @@ img {
   border-color: transparent;
 }
 
-/* ================================================================
-   7. PROJECTS
-   ================================================================ */
+
 
 .projects__header {
   display: flex;
@@ -861,10 +850,6 @@ img {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 18px;
   margin-top: 24px;
-}
-
-:root {
-  --font-poppins: "Poppins", sans-serif;
 }
 
 .font-poppins {
@@ -1022,9 +1007,7 @@ img {
   flex: 1;
 }
 
-/* ================================================================
-   8. PROCESS
-   ================================================================ */
+
 
 .process {
   position: relative;
@@ -1097,9 +1080,7 @@ img {
   line-height: 1.5;
 }
 
-/* ================================================================
-   9. EXPERIENCES
-   ================================================================ */
+
 
 .experiences__row {
   padding: 40px 24px;
@@ -1139,9 +1120,7 @@ img {
   margin-top: 2px;
 }
 
-/* ================================================================
-   10. ABOUT
-   ================================================================ */
+
 
 .about__grid {
   display: grid;
@@ -1243,11 +1222,9 @@ img {
 }
 
 
-/* ================================================================
-   DEV NOTICE MODAL — aviso de "site em construção"
-   ================================================================ */
 
-.dn-overlay {
+
+.development-notice {
   position: fixed;
   inset: 0;
   z-index: 100;
@@ -1257,10 +1234,10 @@ img {
   padding: 20px;
   background: rgba(5, 3, 10, 0.6);
   backdrop-filter: blur(3px);
-  animation: dn-fade 0.25s ease;
+  animation: development-notice-fade 0.25s ease;
 }
 
-.dn-card {
+.development-notice__content {
   position: relative;
   width: 100%;
   max-width: 480px;
@@ -1269,10 +1246,10 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: radial-gradient(120% 140% at 100% 0%, var(--purple-light), var(--purple) 70%);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-  animation: dn-pop 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: development-notice-pop 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.dn-badge {
+.development-notice__badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1285,15 +1262,15 @@ img {
   color: #fff;
 }
 
-.dn-dot {
+.development-notice__status-indicator {
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: #f7b733;
-  animation: dn-blink 1.6s ease-in-out infinite;
+  animation: development-notice-blink 1.6s ease-in-out infinite;
 }
 
-.dn-close {
+.development-notice__close-button {
   position: absolute;
   top: 22px;
   right: 22px;
@@ -1310,12 +1287,12 @@ img {
   transition: 0.2s ease;
 }
 
-.dn-close:hover {
+.development-notice__close-button:hover {
   background: rgba(255, 255, 255, 0.12);
   transform: rotate(90deg);
 }
 
-.dn-title {
+.development-notice__title {
   color: #fff;
   font-family: var(--font-display);
   font-weight: 700;
@@ -1324,21 +1301,14 @@ img {
   margin-top: 22px;
 }
 
-.dn-body {
+.development-notice__description {
   color: rgba(255, 255, 255, 0.75);
   font-size: 14.5px;
   line-height: 1.65;
   margin-top: 16px;
 }
 
-.dn-emphasis {
-  color: #fff;
-  font-weight: 700;
-  font-size: 14.5px;
-  margin-top: 12px;
-}
-
-.dn-actions {
+.development-notice__actions {
   display: flex;
   align-items: center;
   gap: 22px;
@@ -1346,27 +1316,13 @@ img {
   flex-wrap: wrap;
 }
 
-.dn-btn-ghost {
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.dn-btn-ghost:hover {
-  color: #fff;
-}
-
-.dn-divider {
+.development-notice__divider {
   border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.16);
   margin-top: 22px;
 }
 
-.dn-footer {
+.development-notice__footer {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1375,27 +1331,27 @@ img {
   color: rgba(255, 255, 255, 0.75);
 }
 
-.dn-footer b {
+.development-notice__footer b {
   color: #fff;
 }
 
-@keyframes dn-fade {
+@keyframes development-notice-fade {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-@keyframes dn-pop {
+@keyframes development-notice-pop {
   from { opacity: 0; transform: translateY(14px) scale(0.97); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-@keyframes dn-blink {
+@keyframes development-notice-blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.35; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .dn-overlay, .dn-card, .dn-dot {
+  .development-notice, .development-notice__content, .development-notice__status-indicator {
     animation: none;
   }
 }

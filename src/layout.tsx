@@ -15,22 +15,22 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
   const scrolled = useScrolledPast(12);
 
   return (
-    <header className={`navbar surface ${scrolled ? "navbar--scrolled" : ""}`}>
-      <div className="container navbar__row">
-        <a href="/" className="navbar__brand">
+    <header className={`site-header page-surface ${scrolled ? "site-header--scrolled" : ""}`}>
+      <div className="container site-header__content">
+        <a href="#inicio" className="site-header__brand" aria-label="Ir para o início">
           <img
             src="/favicon.svg"
             alt="Evellyn Gomes"
-            className="navbar__logo"
+            className="site-header__logo"
           />
 
-          <span className="navbar__brand-text">
+          <span className="site-header__brand-name">
             <span>EVELLYN</span>
             <span>GOMES</span>
           </span>
         </a>
 
-        <nav className="navbar__links navbar__links--desktop" aria-label="Navegação principal">
+        <nav className="site-header__navigation site-header__navigation--desktop" aria-label="Navegação principal">
           {navLinks.map((link) => (
             <a key={link.label} href={link.href} className="nav-link">
               {link.label}
@@ -38,14 +38,14 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
           ))}
         </nav>
 
-        <div className="navbar__actions">
+        <div className="site-header__actions">
           <ThemeToggle theme={theme} onToggle={onToggleTheme} />
-          <a href="https://wa.me/5581997208697" className="btn btn-outline btn-sm navbar__links--desktop">
+          <a href="https://wa.me/5581997208697" className="btn btn-outline btn-sm site-header__navigation--desktop">
             Contato
           </a>
           <button
             type="button"
-            className="navbar__burger"
+            className="site-header__menu-button"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
@@ -55,8 +55,8 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
         </div>
       </div>
 
-      <div className={`navbar__mobile ${open ? "is-open" : ""}`}>
-        <div className="navbar__mobile-inner">
+      <div className={`site-header__mobile-menu ${open ? "is-open" : ""}`}>
+        <div className="site-header__mobile-menu-content">
           {navLinks.map((link) => (
             <a key={link.label} href={link.href} className="nav-link" onClick={() => setOpen(false)}>
               {link.label}
@@ -73,17 +73,17 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
 
 export function Footer() {
   return (
-    <footer id="contato" className="surface footer">
-      <div className="container footer__row">
-        <div className="footer__brand">
+    <footer id="contato" className="page-surface site-footer">
+      <div className="container site-footer__content">
+        <div className="site-footer__brand">
           <EGMark size={30} />
           <div>
-            <div className="footer__name">EVELLYN GOMES</div>
-            <div className="font-poppins text-secondary footer__tagline">DESIGN • CODE • DIGITAL</div>
+            <div className="site-footer__name">EVELLYN GOMES</div>
+            <div className="font-poppins text-secondary site-footer__tagline">DESIGN • CODE • DIGITAL</div>
           </div>
         </div>  
 
-        <nav className="footer__links" aria-label="Links do rodapé">
+        <nav className="site-footer__navigation" aria-label="Links do rodapé">
           {navLinks
             .filter((link) => link.label !== "Contato")
             .map((link) => (
@@ -93,11 +93,11 @@ export function Footer() {
             ))}
         </nav>
 
-        <div className="footer__social">
+        <div className="site-footer__social-links">
           <a className="icon-circle icon-circle-sm" href="https://www.instagram.com/evyngomes/" aria-label="Instagram">
             <Instagram size={15} />
           </a>
-          <a className="icon-circle icon-circle-sm font-poppins footer__behance" href="https://www.behance.net/evellynamélia" aria-label="Behance">
+          <a className="icon-circle icon-circle-sm font-poppins site-footer__behance-link" href="https://www.behance.net/evellynamélia" aria-label="Behance">
             Be
           </a>
           <a className="icon-circle icon-circle-sm" href="https://br.linkedin.com/in/evellynamélia" aria-label="LinkedIn">
@@ -109,7 +109,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="footer__bottom">
+      <div className="site-footer__copyright">
         <span className="text-secondary">© 2026 Evellyn Gomes. Todos os direitos reservados.</span>
       </div>
     </footer>
@@ -123,7 +123,7 @@ export function ScrollTop() {
   return (
     <button
       type="button"
-      className={`scroll-top ${show ? "is-visible" : ""}`}
+      className={`back-to-top ${show ? "is-visible" : ""}`}
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       aria-label="Voltar ao topo"
       tabIndex={show ? 0 : -1}

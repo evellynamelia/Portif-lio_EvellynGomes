@@ -160,7 +160,12 @@ function ProjectCard({ project }: { project: Project }) {
   const ViewIcon = PlatformIcon ?? ArrowUpRight;
 
   return (
-    <a href={project.url ?? "#"} className={`card project-card ${project.featured ? "project-card--featured" : ""}`}>
+    <a
+      href={project.url}
+      className={`card project-card ${project.featured ? "project-card--featured" : ""}`}
+      target="_blank"
+      rel="noreferrer"
+    >
       <div className="project-card__thumb">
         {project.image ? (
           <img src={project.image} alt={project.name} className="project-card__thumb-fill" />
@@ -200,7 +205,7 @@ export function Projects() {
               <span>Projetos selecionados</span>
               <Sparkles size={13} />
             </div>
-            <a href="#" className="nav-link font-poppins projects__all-link">
+            <a href="https://www.behance.net/evellynamélia" className="nav-link font-poppins projects__all-link" target="_blank" rel="noreferrer">
               Ver todos os projetos <ArrowRight size={13} />
             </a>
           </div>
@@ -277,7 +282,7 @@ export function Experiences() {
           </div>
         </Reveal>
         <Reveal delay={100}>
-          <Button variant="outline" size="sm" href="https://wa.me/5581997208697">
+          <Button variant="outline" size="sm" href="https://br.linkedin.com/in/evellynamélia">
             Ver minha jornada
           </Button>
         </Reveal>
@@ -329,7 +334,7 @@ export function About() {
               Estou disponível para novos projetos, colaborações e ideias.
             </p>
             <div className="about__contact-action">
-              <a href="mailto:contato@evellyngomes.com" className="btn btn-onlight">
+              <a href="mailto:evellynamelia2005@gmail.com" className="btn btn-onlight">
                 Enviar mensagem
               </a>
             </div>

@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { Menu, X, Instagram, Linkedin, Mail, ArrowUp } from "lucide-react";
 import { navLinks } from "./data";
 import { useScrolledPast } from "./hooks";
 import type { Theme } from "./hooks";
 import { EGMark, ThemeToggle } from "./ui";
-import { SparklesIcon } from "@animateicons/react/lucide";
+import { ArrowUpIcon, InstagramIcon, LinkedinIcon, MailIcon, MenuIcon, XIcon} from "@animateicons/react/lucide";
 
 interface NavbarProps {
   theme: Theme;
@@ -51,7 +50,7 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
           >
-            {open ? <X size={18} /> : <Menu size={18} />}
+            {open ? <XIcon size={18} /> : <MenuIcon size={18} />}
           </button>
         </div>
       </div>
@@ -96,16 +95,16 @@ export function Footer() {
 
         <div className="site-footer__social-links">
           <a className="icon-circle icon-circle-sm" href="https://www.instagram.com/evyngomes/" aria-label="Instagram">
-            <Instagram size={15} />
+            <InstagramIcon size={15} />
           </a>
           <a className="icon-circle icon-circle-sm font-poppins site-footer__behance-link" href="https://www.behance.net/evellynamélia" aria-label="Behance">
             Be
           </a>
           <a className="icon-circle icon-circle-sm" href="https://br.linkedin.com/in/evellynamélia" aria-label="LinkedIn">
-            <Linkedin size={15} />
+            <LinkedinIcon size={15} />
           </a>
           <a className="icon-circle icon-circle-sm" href="mailto:evellynamelia2005@gmail.com" aria-label="E-mail">
-            <Mail size={15} />
+            <MailIcon size={15} />
           </a>
         </div>
       </div>
@@ -129,7 +128,7 @@ export function ScrollTop() {
       aria-label="Voltar ao topo"
       tabIndex={show ? 0 : -1}
     >
-      <ArrowUp size={18} />
+      <ArrowUpIcon size={18} />
     </button>
   );
 }

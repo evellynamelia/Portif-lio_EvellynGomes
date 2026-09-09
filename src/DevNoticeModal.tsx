@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { X, ArrowRight, Construction } from "lucide-react";
+import { ArrowRightIcon, SettingsIcon, XIcon } from "@animateicons/react/lucide";
 import { Button } from "./ui";
-import { SparklesIcon } from "@animateicons/react/lucide";
 
 
 interface DevNoticeModalProps {
@@ -27,7 +26,7 @@ export function DevNoticeModal({ onDismiss }: DevNoticeModalProps) {
         </span>
 
         <button className="development-notice__close-button" aria-label="Fechar aviso" onClick={close}>
-          <X size={16} />
+          <XIcon size={16} />
         </button>
 
         <h2 className="development-notice__title">Esse site ainda está em desenvolvimento.</h2>
@@ -38,14 +37,15 @@ export function DevNoticeModal({ onDismiss }: DevNoticeModalProps) {
         </p>
 
         <div className="development-notice__actions">
-          <Button variant="onlight" size="sm" icon={ArrowRight} onClick={close}>
-            Entendi, continuar
-          </Button>
+          <Button variant="onlight" size="sm" icon={null} onClick={close}>
+                Entendi, continuar
+                <ArrowRightIcon size={14} />
+            </Button>
         </div>
 
         <hr className="development-notice__divider" />
         <div className="development-notice__footer">
-          <Construction size={13} />
+          <SettingsIcon size={13} />
           Encontrou um bug? Me conta em <b>evellynamelia2005@gmail.com</b>
         </div>
       </div>

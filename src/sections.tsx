@@ -1,20 +1,8 @@
-import { useId } from "react";
-import {
-  Instagram,
-  Linkedin,
-  Github,
-  ExternalLink,
-  Mail,
-  Sparkles,
-  ArrowRight,
-  ArrowUpRight,
-  Compass,
-} from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { useId, type ElementType } from "react";
 import evellynPhoto from "./assets/evellyn.jpeg";
 import { services, projects, processSteps, type Project, type Service, type ProcessStepData } from "./data";
 import { Button, EGMark, Reveal } from "./ui";
-import { SparklesIcon } from "@animateicons/react/lucide";
+import { SparklesIcon, InstagramIcon, GithubIcon, ArrowUpRightIcon, LinkedinIcon, ArrowRightIcon, CompassIcon, MailIcon, ExternalLinkIcon } from "@animateicons/react/lucide";
 
 function OrbitLabel() {
   const uid = useId().replace(/:/g, "");
@@ -63,16 +51,16 @@ export function Hero() {
             <span className="font-poppins text-secondary hero__social-label">REDES SOCIAIS</span>
             <div className="hero__social-icons">
               <a className="icon-circle" href="https://www.instagram.com/evyngomes/" aria-label="Instagram">
-                <Instagram size={16} />
+                <InstagramIcon size={16} />
               </a>
               <a className="icon-circle font-mono hero__behance" href="https://www.behance.net/evellynamélia" aria-label="Behance">
                 Be
               </a>
               <a className="icon-circle" href="https://br.linkedin.com/in/evellynamélia" aria-label="LinkedIn">
-                <Linkedin size={16} />
+                <LinkedinIcon size={16} />
               </a>
               <a className="icon-circle" href="mailto:evellynamelia2005@gmail.com" aria-label="E-mail">
-                <Mail size={16} />
+                <MailIcon size={16} />
               </a>
             </div>
           </div>
@@ -120,7 +108,7 @@ function ServiceCard({ service }: { service: Service }) {
 
       <div className="service-card__arrow">
         <div className="icon-circle service-card__arrow-circle">
-          <ArrowUpRight size={16} />
+          <ArrowUpRightIcon size={16} />
         </div>
       </div>
     </div>
@@ -148,17 +136,22 @@ export function Services() {
   );
 }
 
-const platformIcons: Partial<Record<Exclude<Project["platform"], undefined>, LucideIcon>> = {
-  github: Github,
-  linkedin: Linkedin,
-  instagram: Instagram,
-  external: ExternalLink,
+const platformIcons: Partial<
+  Record<Exclude<Project["platform"], "behance" | undefined>, ElementType>
+> = {
+  github: GithubIcon,
+  linkedin: LinkedinIcon,
+  instagram: InstagramIcon,
+  external: ExternalLinkIcon,
 };
 
 function ProjectCard({ project }: { project: Project }) {
   const isBehance = project.platform === "behance";
-  const PlatformIcon = !isBehance && project.platform ? platformIcons[project.platform] : undefined;
-  const ViewIcon = PlatformIcon ?? ArrowUpRight;
+  const PlatformIcon =
+  project.platform !== "behance" && project.platform
+    ? platformIcons[project.platform as keyof typeof platformIcons]
+    : undefined;
+  const ViewIcon = PlatformIcon ?? ArrowUpRightIcon;
 
   return (
     <a
@@ -207,7 +200,7 @@ export function Projects() {
               <SparklesIcon size={13} />
             </div>
             <a href="https://www.behance.net/evellynamélia" className="nav-link font-poppins projects__all-link" target="_blank" rel="noreferrer">
-              Ver todos os projetos <ArrowRight size={13} />
+              Ver todos os projetos <ArrowRightIcon size={13} />
             </a>
           </div>
         </Reveal>
@@ -275,7 +268,7 @@ export function Experiences() {
       <div className="container experiences__row">
         <Reveal className="experiences__intro">
           <div className="experiences__icon">
-            <Compass size={21} />
+            <CompassIcon size={21} />
           </div>
           <div>
             <h3 className="experiences__title">Experiências</h3>

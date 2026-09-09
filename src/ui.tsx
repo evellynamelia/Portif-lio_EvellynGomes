@@ -1,10 +1,8 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ElementType, ReactNode } from "react";
 import { useId } from "react";
-import { ArrowRight, Sun, Moon } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
 import { useReveal } from "./hooks";
 import type { Theme } from "./hooks";
-import { SparklesIcon } from "@animateicons/react/lucide";
+import { ArrowRightIcon, SunIcon, MoonIcon } from "@animateicons/react/lucide";
 
 type Variant = "primary" | "outline" | "onlight";
 type Size = "md" | "sm";
@@ -13,7 +11,7 @@ interface SharedButtonProps {
   children: ReactNode;
   variant?: Variant;
   size?: Size;
-  icon?: LucideIcon | null;
+  icon?: ElementType  | null;
 }
 
 type ButtonProps =
@@ -24,7 +22,7 @@ export function Button({
   children,
   variant = "primary",
   size = "md",
-  icon: Icon = ArrowRight,
+  icon: Icon = ArrowRightIcon,
   className = "",
   href,
   ...rest
@@ -132,10 +130,10 @@ export function ThemeToggle({ theme, onToggle }: ThemeToggleProps) {
       aria-label={theme === "dark" ? "Ativar tema claro" : "Ativar tema escuro"}
     >
       <span className={`theme-toggle__option ${theme === "light" ? "is-active" : ""}`}>
-        <Sun size={14} />
+        <SunIcon size={14} />
       </span>
       <span className={`theme-toggle__option ${theme === "dark" ? "is-active" : ""}`}>
-        <Moon size={14} />
+        <MoonIcon size={14} />
       </span>
     </button>
   );

@@ -1,6 +1,6 @@
-import type { LucideIcon } from "lucide-react";
-import { PenTool, Code2, Megaphone, Video, Lightbulb, Search, Layers, Rocket } from "lucide-react";
-import { RocketIcon, SparklesIcon } from "@animateicons/react/lucide";
+import { PenTool, Code2, Megaphone, Video, Lightbulb, Search, Layers } from "lucide-react";
+import { RocketIcon } from "@animateicons/react/lucide";
+import type { ElementType } from "react";
 
 export interface NavLink {
   label: string;
@@ -20,7 +20,7 @@ export const navLinks: NavLink[] = [
 export interface Service {
   number: string;
   title: string;
-  icon: LucideIcon;
+  icon: ElementType;
   items: string[];
 }
 
@@ -61,7 +61,7 @@ export const services: Service[] = [
 export interface ProcessStepData {
   number: string;
   title: string;
-  icon: LucideIcon;
+  icon: ElementType;
   description: string;
 }
 

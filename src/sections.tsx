@@ -14,6 +14,7 @@ import type { LucideIcon } from "lucide-react";
 import evellynPhoto from "./assets/evellyn.jpeg";
 import { services, projects, processSteps, type Project, type Service, type ProcessStepData } from "./data";
 import { Button, EGMark, Reveal } from "./ui";
+import { SparklesIcon } from "@animateicons/react/lucide";
 
 function OrbitLabel() {
   const uid = useId().replace(/:/g, "");
@@ -81,7 +82,7 @@ export function Hero() {
           <div className="hero__visual">
             <div className="dot-grid anim-pulse hero__dotgrid" aria-hidden="true" />
             <div className="anim-float hero__sparkle" aria-hidden="true">
-              <Sparkles size={20} className="text-purple" />
+              <SparklesIcon size={20} className="text-purple" />
             </div>
             <div className="hero__orbit">
               <OrbitLabel />
@@ -132,7 +133,7 @@ export function Services() {
       <Reveal>
         <div className="eyebrow">
           <span>O que eu faço</span>
-          <Sparkles size={13} />
+          <SparklesIcon size={13} />
         </div>
       </Reveal>
 
@@ -203,7 +204,7 @@ export function Projects() {
           <div className="projects__header">
             <div className="eyebrow">
               <span>Projetos selecionados</span>
-              <Sparkles size={13} />
+              <SparklesIcon size={13} />
             </div>
             <a href="https://www.behance.net/evellynamélia" className="nav-link font-poppins projects__all-link" target="_blank" rel="noreferrer">
               Ver todos os projetos <ArrowRight size={13} />
@@ -250,7 +251,7 @@ export function Process() {
       <Reveal>
         <div className="eyebrow">
           <span>Meu processo</span>
-          <Sparkles size={13} />
+          <SparklesIcon size={13} />
         </div>
       </Reveal>
 
@@ -309,7 +310,7 @@ export function About() {
           <div className="card about__card">
             <div className="eyebrow">
               <span>Sobre mim</span>
-              <Sparkles size={13} />
+              <SparklesIcon size={13} />
             </div>
             <p className="about__text">
               Sou Evellyn Gomes, designer e desenvolvedora front-end apaixonada por criar

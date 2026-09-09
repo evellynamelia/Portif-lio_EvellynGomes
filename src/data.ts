@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { PenTool, Code2, Megaphone, Video, Lightbulb, Search, Layers, Rocket } from "lucide-react";
+import { RocketIcon, SparklesIcon } from "@animateicons/react/lucide";
 
 export interface NavLink {
   label: string;
@@ -69,7 +70,7 @@ export const processSteps: ProcessStepData[] = [
   { number: "02", title: "Pesquisa", icon: Search, description: "Estudo, analiso e descubro o melhor caminho." },
   { number: "03", title: "Design", icon: Layers, description: "Crio interfaces, protótipos e identidades visuais." },
   { number: "04", title: "Desenvolvimento", icon: Code2, description: "Transformo o design em código funcional." },
-  { number: "05", title: "Resultado", icon: Rocket, description: "Entrego experiências digitais completas." },
+  { number: "05", title: "Resultado", icon: RocketIcon, description: "Entrego experiências digitais completas." },
 ];
 
 

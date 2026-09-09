@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { X, ArrowRight, Construction } from "lucide-react";
 import { Button } from "./ui";
+import { SparklesIcon } from "@animateicons/react/lucide";
 
 
 interface DevNoticeModalProps {

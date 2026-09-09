@@ -4,6 +4,7 @@ import { navLinks } from "./data";
 import { useScrolledPast } from "./hooks";
 import type { Theme } from "./hooks";
 import { EGMark, ThemeToggle } from "./ui";
+import { SparklesIcon } from "@animateicons/react/lucide";
 
 interface NavbarProps {
   theme: Theme;

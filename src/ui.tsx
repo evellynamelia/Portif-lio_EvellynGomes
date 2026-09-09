@@ -4,6 +4,7 @@ import { ArrowRight, Sun, Moon } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useReveal } from "./hooks";
 import type { Theme } from "./hooks";
+import { SparklesIcon } from "@animateicons/react/lucide";
 
 type Variant = "primary" | "outline" | "onlight";
 type Size = "md" | "sm";

@@ -1,8 +1,19 @@
-import { useId, type ElementType } from "react";
+import { useId } from "react";
+import {
+  Instagram,
+  Linkedin,
+  Github,
+  ExternalLink,
+  Mail,
+  ArrowRight,
+  ArrowUpRight,
+  Compass,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import evellynPhoto from "./assets/evellyn.jpeg";
 import { services, projects, processSteps, type Project, type Service, type ProcessStepData } from "./data";
 import { Button, EGMark, Reveal } from "./ui";
-import { SparklesIcon, InstagramIcon, GithubIcon, ArrowUpRightIcon, LinkedinIcon, ArrowRightIcon, CompassIcon, MailIcon, ExternalLinkIcon } from "@animateicons/react/lucide";
+import { SparklesIcon } from "@animateicons/react/lucide";
 
 function OrbitLabel() {
   const uid = useId().replace(/:/g, "");
@@ -12,7 +23,15 @@ function OrbitLabel() {
       <defs>
         <path id={`orbit-${uid}`} d="M 75,75 m -60,0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" />
       </defs>
-      <circle cx="75" cy="75" r="60" fill="none" stroke="var(--border)" strokeWidth="1.4" strokeDasharray="2 6" />
+      <circle
+        cx="75"
+        cy="75"
+        r="60"
+        fill="none"
+        stroke="var(--border)"
+        strokeWidth="1.4"
+        strokeDasharray="2 6"
+      />
       <text fill="var(--text-secondary)" fontSize="9" letterSpacing="2" className="font-mono">
         <textPath href={`#orbit-${uid}`} startOffset="0%">
           DESIGN • CODE • DIGITAL • DESIGN • CODE • DIGITAL •
@@ -26,6 +45,7 @@ export function Hero() {
   return (
     <section id="inicio" className="hero">
       <div className="hero__glow" aria-hidden="true" />
+
       <div className="container hero__grid">
         <Reveal>
           <h1 className="hero__title">
@@ -35,32 +55,66 @@ export function Hero() {
             <br />
             <span className="text-purple">EXPERIÊNCIAS.</span>
           </h1>
+
           <p className="text-secondary hero__subtitle">
             Design, código e estratégia para criar experiências digitais que conectam, comunicam e
             geram resultados.
           </p>
+
           <div className="hero__actions">
             <Button variant="primary" href="#projetos">
               Ver projetos
             </Button>
-            <Button variant="outline" href="https://wa.me/5581997208697">
-              Me chama no WhatsApp
+
+            <Button
+              variant="outline"
+              href="/Curriculo Evellyn Gomes.pdf"
+              download="curriculo-evellyn-gomes.pdf"
+            >
+              Baixar currículo
             </Button>
           </div>
+
           <div className="hero__social">
             <span className="font-poppins text-secondary hero__social-label">REDES SOCIAIS</span>
+
             <div className="hero__social-icons">
-              <a className="icon-circle" href="https://www.instagram.com/evyngomes/" aria-label="Instagram">
-                <InstagramIcon size={16} />
+              <a
+                className="icon-circle"
+                href="https://www.instagram.com/evyngomes/"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Instagram size={16} />
               </a>
-              <a className="icon-circle font-mono hero__behance" href="https://www.behance.net/evellynamélia" aria-label="Behance">
+
+              <a
+                className="icon-circle font-mono hero__behance"
+                href="https://www.behance.net/evellynamélia"
+                aria-label="Behance"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Be
               </a>
-              <a className="icon-circle" href="https://br.linkedin.com/in/evellynamélia" aria-label="LinkedIn">
-                <LinkedinIcon size={16} />
+
+              <a
+                className="icon-circle"
+                href="https://br.linkedin.com/in/evellynamélia"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Linkedin size={16} />
               </a>
-              <a className="icon-circle" href="mailto:evellynamelia2005@gmail.com" aria-label="E-mail">
-                <MailIcon size={16} />
+
+              <a
+                className="icon-circle"
+                href="mailto:evellynamelia2005@gmail.com"
+                aria-label="E-mail"
+              >
+                <Mail size={16} />
               </a>
             </div>
           </div>
@@ -69,12 +123,15 @@ export function Hero() {
         <Reveal delay={150}>
           <div className="hero__visual">
             <div className="dot-grid anim-pulse hero__dotgrid" aria-hidden="true" />
+
             <div className="anim-float hero__sparkle" aria-hidden="true">
               <SparklesIcon size={20} className="text-purple" />
             </div>
+
             <div className="hero__orbit">
               <OrbitLabel />
             </div>
+
             <EGMark size={280} animated />
           </div>
         </Reveal>
@@ -90,6 +147,7 @@ function ServiceCard({ service }: { service: Service }) {
     <div className="card service-card">
       <div className="service-card__top">
         <span className="font-mono text-secondary">{service.number}</span>
+
         <div className="service-card__icon">
           <Icon size={19} />
         </div>
@@ -108,7 +166,7 @@ function ServiceCard({ service }: { service: Service }) {
 
       <div className="service-card__arrow">
         <div className="icon-circle service-card__arrow-circle">
-          <ArrowUpRightIcon size={16} />
+          <ArrowUpRight size={16} />
         </div>
       </div>
     </div>
@@ -136,22 +194,17 @@ export function Services() {
   );
 }
 
-const platformIcons: Partial<
-  Record<Exclude<Project["platform"], "behance" | undefined>, ElementType>
-> = {
-  github: GithubIcon,
-  linkedin: LinkedinIcon,
-  instagram: InstagramIcon,
-  external: ExternalLinkIcon,
+const platformIcons: Partial<Record<Exclude<Project["platform"], undefined>, LucideIcon>> = {
+  github: Github,
+  linkedin: Linkedin,
+  instagram: Instagram,
+  external: ExternalLink,
 };
 
 function ProjectCard({ project }: { project: Project }) {
   const isBehance = project.platform === "behance";
-  const PlatformIcon =
-  project.platform !== "behance" && project.platform
-    ? platformIcons[project.platform as keyof typeof platformIcons]
-    : undefined;
-  const ViewIcon = PlatformIcon ?? ArrowUpRightIcon;
+  const PlatformIcon = !isBehance && project.platform ? platformIcons[project.platform] : undefined;
+  const ViewIcon = PlatformIcon ?? ArrowUpRight;
 
   return (
     <a
@@ -170,7 +223,9 @@ function ProjectCard({ project }: { project: Project }) {
             aria-hidden="true"
           />
         )}
+
         <span className="project-card__tag font-mono">{project.tag}</span>
+
         <span className="project-card__view">
           {isBehance ? (
             <span className="font-mono project-card__view-behance">Be</span>
@@ -199,8 +254,9 @@ export function Projects() {
               <span>Projetos selecionados</span>
               <SparklesIcon size={13} />
             </div>
-            <a href="https://www.behance.net/evellynamélia" className="nav-link font-poppins projects__all-link" target="_blank" rel="noreferrer">
-              Ver todos os projetos <ArrowRightIcon size={13} />
+
+            <a href="#/projetos" className="nav-link font-poppins projects__all-link">
+              Ver todos os projetos <ArrowRight size={13} />
             </a>
           </div>
         </Reveal>
@@ -229,6 +285,7 @@ function ProcessStep({ step }: { step: ProcessStepData }) {
       <div className="process-step__icon">
         <Icon size={19} />
       </div>
+
       <div>
         <span className="font-mono text-secondary process-step__number">{step.number}</span>
         <h4 className="process-step__title">{step.title}</h4>
@@ -250,6 +307,7 @@ export function Process() {
 
       <div className="process">
         <div className="process__line" aria-hidden="true" />
+
         <div className="process__grid">
           {processSteps.map((step, index) => (
             <Reveal key={step.title} delay={index * 90}>
@@ -268,13 +326,17 @@ export function Experiences() {
       <div className="container experiences__row">
         <Reveal className="experiences__intro">
           <div className="experiences__icon">
-            <CompassIcon size={21} />
+            <Compass size={21} />
           </div>
+
           <div>
             <h3 className="experiences__title">Experiências</h3>
-            <p className="text-secondary experiences__subtitle">Além do que eu crio, existe a jornada.</p>
+            <p className="text-secondary experiences__subtitle">
+              Além do que eu crio, existe a jornada.
+            </p>
           </div>
         </Reveal>
+
         <Reveal delay={100}>
           <Button variant="outline" size="sm" href="https://br.linkedin.com/in/evellynamélia">
             Ver minha jornada
@@ -285,18 +347,14 @@ export function Experiences() {
   );
 }
 
-
 export function About() {
   return (
     <section id="sobre" className="container section">
       <div className="about__grid">
         <Reveal>
           <div className="about__photo">
-              <img
-                  src={evellynPhoto}
-                  alt="Evellyn Gomes"
-                />
-                </div>
+            <img src={evellynPhoto} alt="Evellyn Gomes" />
+          </div>
         </Reveal>
 
         <Reveal delay={100}>
@@ -305,13 +363,15 @@ export function About() {
               <span>Sobre mim</span>
               <SparklesIcon size={13} />
             </div>
+
             <p className="about__text">
               Sou Evellyn Gomes, designer e desenvolvedora front-end apaixonada por criar
               experiências digitais que conectam pessoas, marcas e ideias. Transito entre design,
               tecnologia, marketing e audiovisual para transformar conceitos em projetos completos.
             </p>
+
             <div className="about__cta">
-              <Button variant="outline" size="sm" href="#projetos">
+              <Button variant="outline" size="sm" href="#/sobre">
                 Conhecer mais
               </Button>
             </div>
@@ -323,10 +383,13 @@ export function About() {
             <div className="anim-float about__contact-mark" aria-hidden="true">
               <EGMark size={300} />
             </div>
+
             <h3 className="about__contact-title">VAMOS CRIAR ALGO INCRÍVEL JUNTOS?</h3>
+
             <p className="about__contact-text">
               Estou disponível para novos projetos, colaborações e ideias.
             </p>
+
             <div className="about__contact-action">
               <a href="mailto:evellynamelia2005@gmail.com" className="btn btn-onlight">
                 Enviar mensagem
